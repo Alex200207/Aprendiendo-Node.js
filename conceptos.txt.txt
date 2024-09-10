@@ -1,0 +1,23 @@
+Que es node.js basicamente un ambiente de ejecucion para ejecutar JavaScript
+desligado del navegador web
+
+Runtime environment.
+
+Que lo hace tan popular
+
+Motor
+codigo abierto con el motor de V8 de google y esta disenado
+para realizar tareas de E/S (Entradas y Salidas) junto con el
+manejo de archivos de la computadora cliente y servidor
+
+Caracteristicas
+
+.Asincrona
+.Modulo nativos y de terceros
+.Gestion de paquetes con NPM
+.construccion de servicios.
+.Escabilidad
+
+https://nodejs.org/en/learn/asynchronous-work/overview-of-blocking-vs-non-blocking#overview-of-blocking-vs-non-blocking
+
+informacion sobre el blocking vs Non-Bloquiking Node 
