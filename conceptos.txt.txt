@@ -21,3 +21,124 @@ Caracteristicas
 https://nodejs.org/en/learn/asynchronous-work/overview-of-blocking-vs-non-blocking#overview-of-blocking-vs-non-blocking
 
 informacion sobre el blocking vs Non-Bloquiking Node 
+
+JavaScript es Bloquiking Y Single threaded
+
+significa que casi todo el codigo de js es bloquiante
+es decir En JavaScript, código bloqueante (o bloqueo de ejecución)
+se refiere a aquel código que impide que el resto del programa continúe
+ejecutándose hasta que dicha tarea haya terminado. Esto puede hacer que el programa quede 
+"detenido" mientras se completa una operación, como la lectura de un archivo o una consulta 
+a una base de datos.
+
+En JavaScript, el término single-threaded (o monohilo) significa que JavaScript ejecuta todo su código en un solo hilo de
+ejecución. Un hilo es la secuencia básica de ejecución de instrucciones de un programa. En un entorno de un solo hilo, solo 
+se puede ejecutar una tarea a la vez, lo que puede parecer una limitación.
+
+esto fue un problema que node tuvo que arreglar en orden
+para que nosotros podamos tener aplicaciones que escalan
+a millones de usuarios conectados y respuestas de manera 
+simultanea.
+
+
+Event Loop y code execution
+
+Event Loop: 
+El event loop es un mecanismo que permite a JavaScript y Node.js manejar operaciones asincrónicas y no bloquear el flujo de ejecución.
+JavaScript es un lenguaje de un solo hilo (single-threaded), lo que significa que solo puede ejecutar una cosa a la vez en su hilo principal.
+Sin embargo, gracias al event loop y a las operaciones asincrónicas, JavaScript puede delegar tareas que tarden mucho (como lectura de archivos 
+o consultas a bases de datos) y continuar ejecutando otros códigos sin detenerse.
+
+
+
+https://www.builder.io/blog/visual-guide-to-nodejs-event-loop
+
+setTimeout(cb1 , 0);
+
+Promise.resolve().then( cb2 ) forma de una tarea asincrona que se resuelve inmediatamente.
+
+process.nextTickek( cb3 ) propio de node
+
+fs.readFile( 'file.txt' , cb4 ); leer un archivo ya lo vimos
+
+setImmediate( cb5 ); resive un callback que se ejecuta
+
+si todos estos procedimientos se dispararan cual se ejecuta primero???
+
+ pero es el Event Loop quien decide 
+
+ 3 Principales componentes de node.js
+
+-dependecias externas.
+-Caracteristicas de c++.
+-Libreria de js que se conectaran con c++
+desde nuestro codigo.
+
+libuv 
+
+es quien va permitir a node poder trabajar en tareas asincronas
+que maneja :
+
+-Operaciones de I/O (Entrada/Salida)
+
+-Sistema de archivos
+-Redes (TCP, UDP, sockets)
+-Operaciones de DNS
+-Conexiones HTTP/HTTPS
+-Temporizadores
+  setTimeout
+  setInterval
+-Hilos en segundo plano (Thread Pool)
+-Sistemas de señales
+-Operaciones asíncronas no nativas
+
+Event Loop sigue ciertas reglas
+
+que pasa si dos Timeouts terminan al mismo tiempo?
+que pasa si una promesa termina al mismo tiempo que otro callback?
+
+En que orden se ejecutaran???????
+
+
+Callback Timers:
+Descripción: Son funciones que se ejecutan después de un cierto periodo de tiempo especificado.
+Uso: Se utilizan con setTimeout y setInterval
+
+Microtask Queue
+Descripción: Es una cola donde se colocan las tareas de alta prioridad que deben ejecutarse después de la ejecución actual y antes de cualquier tarea de la cola de tareas.
+Uso: Se utiliza principalmente para manejar promesas y su resolución a través de Promise.then(), Promise.catch(), y async/await.
+
+Next Tick Queue
+Descripción: Es una cola especial que permite ejecutar callbacks inmediatamente después de la operación actual, pero antes de que se procese cualquier otro callback en la microtask queue o la cola de tareas.
+Uso: Se utiliza con process.nextTick(), lo que permite que una función se ejecute en el siguiente ciclo de la event loop.
+
+Todo el trabajo sincrono es ejecutado de primera instancia
+1.los callback en el microtask se ejecutan primero
+2.todos los callback dentro del timer queue se ejecutan es
+decir despues de los callback el codigo sincrono lo que son 
+setTimeout setInterval se van a ejecutar inmediatamente despues.
+3.Los callback en el microtask queue (si hay) se ejecutab despues
+de los callback timers, primero tareas en el nexTick queue y lugo
+tareas en el promise queue
+4.Callbacks de i/o se ejecutan.
+5.Callbacks en el microtask queue se ejecutan (si hay), Y
+luego promise queue (si hay)
+6.Todos los callbacks en el check queue se ejecutan.
+7.callback en check queue.(siguiendo el mismo orden anterior,nextTick y luego promise)
+8.Todo los callbacks en el close queue son ejecutados.
+9.Por una ultima vez en el mismo ciclo,los Microtask
+queue son ejecutados de la misma forma nextTick y 
+luego promise queue.
+
+
+
+Pregunta 
+Cuando se completa una tarea asincrona en libuv 
+enque momento decide node ejecutar la funcion callback
+asociada en la pila de llamadas (callstack)?
+
+
+respuestas
+callbacks son ejecutados solo cuando el callback esta vacio.
+
+materiales ajuntos en assets .

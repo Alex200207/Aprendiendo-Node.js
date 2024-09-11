@@ -5,6 +5,7 @@ const fs = require('fs');
 const content = fs.readFileSync('README.md', 'utf-8');
 
 const wordCount = content.split('').length
+//split es un metodo de los strings que devuelve un array con todas las palabras del string
 
 const reactWordCount = content.match(/React/gi ?? []).length//si no encuentra ninguna palabra devuelve un array vacio y se le pone un length para que devuelva 0
 
