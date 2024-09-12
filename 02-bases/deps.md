@@ -27,6 +27,27 @@ escribir lo siguiente en package.json
 en script
 "dev": "nodemon (aqui el archivo de entrada en mi caso esta en src/app.js)",
 
+/**Package.json:
+
+npm init : instalacion de package.json
+
+ * El archivo `package.json` es un archivo de metadatos para un proyecto de Node.js. Contiene información variada sobre el proyecto, como su nombre, versión, dependencias, scripts y más.
+ * 
+ * Este archivo generalmente se encuentra en el directorio raíz del proyecto y es utilizado por administradores de paquetes como npm o yarn para gestionar las dependencias y scripts del proyecto.
+ * 
+ * El archivo `package.json` sigue un formato JSON específico e incluye pares clave-valor que definen la configuración del proyecto. Algunos campos comúnmente utilizados en el archivo `package.json` son:
+ * 
+ * - `name`: El nombre del proyecto.
+ * - `version`: La versión del proyecto.
+ * - `description`: Una breve descripción del proyecto.
+ * - `main`: El punto de entrada del proyecto.
+ * - `dependencies`: Las dependencias de tiempo de ejecución del proyecto.
+ * - `devDependencies`: Las dependencias de desarrollo del proyecto.
+ * - `scripts`: Scripts personalizados que pueden ser ejecutados utilizando npm o yarn.
+ * 
+ * El archivo `package.json` es esencial para gestionar y construir proyectos de Node.js, ya que proporciona una ubicación centralizada para definir los detalles y dependencias del proyecto.
+ */
+
 
 Node-Modules:
 
