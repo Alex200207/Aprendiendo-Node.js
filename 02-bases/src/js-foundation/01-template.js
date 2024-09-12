@@ -3,6 +3,7 @@ const emailTemplate = `
 <div>
     <h1>Hi, {{name}}
     <p>Thank you for your order</p>
+    <p>Order total: {{total}}</p>
 
 </div>`;
 
