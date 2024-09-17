@@ -17,3 +17,5 @@ const heroes = ['flash','superman','batman','wonderwoman'];
 
 const [,,batman] = heroes;
 
+//Los breakpoints pausan la ejecucion del codigo
+

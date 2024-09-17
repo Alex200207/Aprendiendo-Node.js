@@ -6,7 +6,33 @@
 
 // console.log(emailTemplate); // emailTemplate:
 
-require('./js-foundation/02-desestructuracion');
+// const {getUser} = require('./js-foundation/04-Arrow');
+ require('./js-foundation/05-factory');
+
+
+// const id = 1;
+
+// getUser(id, function(err,user){//manejo de errores
+// if(err)
+// {
+//     throw new Error(err);
+// }
+//     console.log(user)
+
+// }); // { user: { id: 1, name: 'eddy' } }
+
+
+// const id = 2;
+
+// getUser( id, (err,user) => {
+//     if(err)
+//     {
+//         throw new Error( err );
+//     }
+//     console.log( user )
+// })
+
+
 
 
 
