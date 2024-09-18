@@ -1,10 +1,12 @@
 //factory function es una funcion que crea una funcion
 
-const { v4: uuidv4 } = require('uuid');//importamos la libreria uuid
-//uuid es una libreria que nos permite generar identificadores unicos
+const {getAge, getUUID} = require('../plugins');//importamos el barril de plugins
 
-const getAge = require('get-age');//importamos la libreria get-age
-//get-age es una libreria que nos permite calcular la edad
+// const { getUUID} = require('../plugins/get-id-plugin');//importamos la libreria uuid
+// //uuid es una libreria que nos permite generar identificadores unicos
+
+// const {getAge }= require('../plugins/get-age.plugin');//importamos la libreria get-age
+// //get-age es una libreria que nos permite calcular la edad
 
 //creamos un objeto
 
@@ -14,7 +16,7 @@ const obj = { name: 'Eddy', birthdate: '2002-07-12', country: 'NIC' };
 const buildPerson = ({ name, birthdate }) => {
     //regresamos una nueva persona
     return {
-        id:uuidv4(),//generamos un id unico
+        id:getUUID() ,//generamos un id unico
         name ,
         birthdate  ,
         age: getAge( birthdate )//calculamos la edad
