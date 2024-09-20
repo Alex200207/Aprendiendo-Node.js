@@ -1,3 +1,6 @@
+// ! Referencias a la funcion de Factory y uso
+// const { getAge, getUUID } = require('./plugins');//importamos el barril de plugins
+
 //require es una funcion en la que voy a importar o voy a requerir
 //un archivo en particular
 // creo una constante que se llama templateExport y requiero el archivo 01-template.js
@@ -7,9 +10,16 @@
 // console.log(emailTemplate); // emailTemplate:
 
 // const {getUser} = require('./js-foundation/04-Arrow');
- require('./js-foundation/05-factory');
+//  const { buildMakePerson } = require('./js-foundation/05-factory');
 
 
+// const buildPerson = buildMakePerson({ getUUID, getAge });
+
+//  const obj = { name: 'Eddy', birthdate: '2002-07-12', country: 'NIC' }; 
+
+// const john = buildPerson(obj);
+
+// console.log(john); // { id: '1', name: 'Eddy', birthdate: '2002-07-12', age: 19 }
 // const id = 1;
 
 // getUser(id, function(err,user){//manejo de errores
@@ -31,7 +41,16 @@
 //     }
 //     console.log( user )
 // })
+//-------------------------------Promises
 
+const getPokemonById = require('./js-foundation/06-promises');
+
+
+const name = getPokemonById(4, (pokemon) => {
+    console.log({pokemon});
+});
+
+// Promise { <pending> } 
 
 
 
