@@ -1,3 +1,5 @@
+
+
 // ! Referencias a la funcion de Factory y uso
 // const { getAge, getUUID } = require('./plugins');//importamos el barril de plugins
 
@@ -42,15 +44,35 @@
 //     console.log( user )
 // })
 //-------------------------------Promises
+// ! Referencias a la funcion de Promises y uso
+// const getPokemonById = require('./js-foundation/06-promises');
 
-const getPokemonById = require('./js-foundation/06-promises');
+
+//  getPokemonById(4)
+//     .then( pokemon => console.log(pokemon) )
+//     .catch( ( err ) => console.log('Intenta de nuevo') );
+    
 
 
-const name = getPokemonById(4, (pokemon) => {
-    console.log({pokemon});
-});
 
-// Promise { <pending> } 
+//-----------------------------------------------------------------------------------
+const getPokemonById = require('./js-foundation/async-await')
+
+const show = async() => {
+    try{
+        const data = await getPokemonById(4);
+        console.log(data.name)
+    }
+    catch(err)
+    {
+        console.log("No existe el pokemon");
+    }
+
+}
+
+show();
+
+
 
 
 
