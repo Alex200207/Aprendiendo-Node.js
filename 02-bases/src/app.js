@@ -56,26 +56,23 @@
 
 
 //-----------------------------------------------------------------------------------
-const getPokemonById = require('./js-foundation/async-await')
+// const getPokemonById = require('./js-foundation/async-await')
 
-const show = async() => {
-    try{
-        const data = await getPokemonById(4);
-        console.log(data.name)
-    }
-    catch(err)
-    {
-        console.log("No existe el pokemon");
-    }
+// getPokemonById(4)
+//     .then( pokemon => console.log({pokemon}) )
+//     .catch( ( err ) => console.log('Intenta de nuevo',err) );
+    
 
-}
 
-show();
+const { buildLogger } = require('./plugins');//importamos el barril de plugins
 
 
 
+//este es el servicio o archivo que estamos mandando a llmar
+const logger = buildLogger('app.js');//creamos un logger para el servicio app
 
-
+logger.log('Hola mundo');//mandamos un mensaje al logger
+logger.error('Esto es algo malo');//mandamos un mensaje al logger
 
 
 

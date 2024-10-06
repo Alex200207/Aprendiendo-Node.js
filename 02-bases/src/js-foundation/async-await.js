@@ -14,7 +14,7 @@ const getPokemonId = async (id) => {
 //   }
     const pokemon = await http.get( url )
 
-    return pokemon;
+    return pokemon.name;
 };
 
 module.exports = getPokemonId;

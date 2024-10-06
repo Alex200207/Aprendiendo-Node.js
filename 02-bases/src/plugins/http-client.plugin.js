@@ -3,8 +3,8 @@ const axios = require('axios');
 const httpClientPlugin = {
 
     get: async(url) => {
-        const resp = await axios.get(url);
-         return await resp.data;
+        const {data} = await axios.get(url);
+         return data;
     }
 }
 

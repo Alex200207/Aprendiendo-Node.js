@@ -142,3 +142,14 @@ respuestas
 callbacks son ejecutados solo cuando el callback esta vacio.
 
 materiales ajuntos en assets .
+
+
+
+/**
+ * Esta función inicializa y configura el logger de Winston.
+ * Winston es una biblioteca de registro versátil para aplicaciones Node.js.
+ * Permite registrar en varios transportes como consola, archivos y servidores remotos.
+ * La configuración típicamente incluye establecer niveles de registro, formatear mensajes de registro y especificar transportes.
+ * 
+ * @returns {Object} - Instancia configurada del logger de Winston.
+ */
