@@ -1,16 +1,14 @@
-const axios = require('axios');
+import axios from 'axios';
 
-const httpClientPlugin = {
+export const httpClientPlugin = {
 
-    get: async(url) => {
+    get: async(url: string) => {
         const {data} = await axios.get(url);
          return data;
     }
 }
 
-module.exports = {
-    http: httpClientPlugin
-}
+
 //creando un patron adaptador con el wrapper de axios
 //ya si algun dia dicen que modifiquen por fetch 
 //solo se modifica el plugin y no el codigo

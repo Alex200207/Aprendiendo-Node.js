@@ -1,5 +1,5 @@
 
-
+import { builLogger } from "./plugins/logger.plugin";
 // ! Referencias a la funcion de Factory y uso
 // const { getAge, getUUID } = require('./plugins');//importamos el barril de plugins
 
@@ -64,12 +64,12 @@
     
 
 
-const { buildLogger } = require('./plugins');//importamos el barril de plugins
+// const { buildLogger } = require('./plugins');//importamos el barril de plugins
 
 
 
 //este es el servicio o archivo que estamos mandando a llmar
-const logger = buildLogger('app.js');//creamos un logger para el servicio app
+const logger = builLogger('app.js');//creamos un logger para el servicio app
 
 logger.log('Hola mundo');//mandamos un mensaje al logger
 logger.error('Esto es algo malo');//mandamos un mensaje al logger

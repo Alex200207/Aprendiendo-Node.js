@@ -1,5 +1,7 @@
-const winston = require('winston');
-const {combine, timestamp, json} = winston.format;
+import winston, {format} from 'winston';//importamos winston
+
+
+const {combine, timestamp, json} = format;
 
 
 //esta es la configuracion basica de nuestro patron adaptador
@@ -30,14 +32,14 @@ const logger = winston.createLogger({
 //todo lo que se haga y no ha sido exportado es privado en este modulo
 //crearemos una factory function
 //recivira cual es el servicio en el cual se etsra utilizando mi logger
-module.exports = function builLogger(service){
+export const  builLogger = (service: string) => {
 
     return {//retornamos un objeto con dos metodos
-        log: (message) => { //este metodo recibe un mensaje
+        log: (message: string) => { //este metodo recibe un mensaje
             logger.log('info', {message, service} ); //asi podremos identificar que servicio esta 
             //sucediendo el errpr en que archivo 
         },
-        error: (message) => { //este metodo recibe un mensaje 
+        error: (message: string) => { //este metodo recibe un mensaje 
             logger.error('error', 
               {
                 message, 
