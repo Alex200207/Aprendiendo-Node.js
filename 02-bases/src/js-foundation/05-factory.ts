@@ -9,12 +9,22 @@
 // //get-age es una libreria que nos permite calcular la edad
 
 //creamos un objeto
+interface buildMakePersonOptions {
+    getUUID: () => string;
+    getAge: (birthdate: string) => number;
+}
 
+interface Person {
+    id: string;
+    name: string;
+    birthdate: string;
+    age: number;
+}
 
-const buildMakePerson = ({ getUUID,getAge }) => {
+ export const buildMakePerson = ({ getUUID,getAge }: buildMakePersonOptions) => {
 
     
-return ({ name, birthdate }) => {
+return ({ name, birthdate }: Person ) => {
     //regresamos una nueva persona
     return {
         id:getUUID() ,//generamos un id unico
@@ -37,6 +47,6 @@ return ({ name, birthdate }) => {
 
 // console.log( john ); // { id: 1626170400000, name: 'Eddy', birthdate: '2002-07-12', age: 19 }   
 
-module.exports = {
-    buildMakePerson,
-}
+// module.exports = {
+//     buildMakePerson,
+// }

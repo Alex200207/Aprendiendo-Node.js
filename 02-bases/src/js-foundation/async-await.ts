@@ -3,7 +3,7 @@ const {http} = require('../plugins/http-client.plugin');
 
 
 
-const getPokemonId = async (id) => {
+const getPokemonId = async (id: string|number):Promise<string> => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 //   try {
 //     const response = await axios.get(`${url}${id}`);

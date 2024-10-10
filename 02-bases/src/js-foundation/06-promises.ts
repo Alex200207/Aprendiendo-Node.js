@@ -1,15 +1,15 @@
 //Promesas en JavaScript
 
-const getPokemonById = (id) => {
+export const getPokemonById = (id: string|number): Promise<string> => {
 
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    fetch(url)
+    return fetch(url)
     .then( ( resp ) => resp.json() )
     // .then( () => {throw new Error('No existe el pokemon')})
     .then( ( pokemon ) => pokemon.name );
 }
 
-module.exports = getPokemonById;
+// module.exports = getPokemonById;
 
 //las promesas en cadena se pueden encadenar con el metodo then y catch para manejar errores
 //ejeemplo de promesas en cadena
