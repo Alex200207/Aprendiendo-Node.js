@@ -15,7 +15,7 @@ const { SHELL,npm_lifecycle_script} = process.env;
 //env es una propiedad de process que me permite acceder a las variables de entorno
 const heroes = ['flash','superman','batman','wonderwoman'];
 
-const [,,batman] = heroes;
+const [ , , batman] = heroes;
 
 //Los breakpoints pausan la ejecucion del codigo
 

@@ -1,5 +1,5 @@
 // template literals
-const emailTemplate = `
+export const emailTemplate = `
 <div>
     <h1>Hi, {{name}}
     <p>Thank you for your order</p>
@@ -7,10 +7,10 @@ const emailTemplate = `
 
 </div>`;
 
-console.log(emailTemplate); // emailTemplate:
+// console.log(emailTemplate); // emailTemplate:
 
 
-module.exports = {// export emailTemplate
-emailTemplate,
-} 
+// module.exports = {// export emailTemplate
+// emailTemplate,
+// } 
 //module.exports  es una funcion que me permite exportar una variable o una funcion
