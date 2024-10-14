@@ -1,7 +1,10 @@
 {
-  "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-
+  
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts","**/*.test.ts"],
+    "compilerOptions": {
+  
+      /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
     // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
