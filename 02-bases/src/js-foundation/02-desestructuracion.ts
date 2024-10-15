@@ -13,7 +13,7 @@ const { SHELL,npm_lifecycle_script} = process.env;
 // console.table({SHELL,npm_lifecycle_script});
 
 //env es una propiedad de process que me permite acceder a las variables de entorno
-const heroes = ['flash','superman','batman','wonderwoman'];
+export const heroes = ['flash','superman','batman','wonderwoman'];
 
 const [ , , batman] = heroes;
 
