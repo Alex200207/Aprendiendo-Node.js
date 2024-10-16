@@ -13,6 +13,8 @@ describe('js-foundation/02-desestructuracion', () => {
     test('el primer heroe debe ser flash y el segundo debe ser superman', () => {
         
         const [flash, superman] = heroes;//destructuracion de arreglos
+
+
         expect(flash).toBe('flash');
         expect(superman).toBe('superman');
 
