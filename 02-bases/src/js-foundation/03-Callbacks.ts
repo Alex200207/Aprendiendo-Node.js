@@ -18,14 +18,14 @@ const users: User[] = [
 
 ];
 
-export function getUser( id: number , callback:(err?: string, user?: User) => void){
+export function getUser( id: number , callback:(err?: string, user?: User) => void){//callback es una funcion que recibe dos argumentos
     const user = users.find(function(user){
         return user.id === id
     })
     if( !user ){
         return callback(`USUARIO no encontrado ${id}`);
     }
-    return callback(undefined,user);
+    return callback(undefined,user);//retornar un callback nullo
     //retornar un callback nullo
     //es decir que no hay error
     //sintaixs de callback (error,usuario)
